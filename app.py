@@ -3,7 +3,7 @@ from sanic import Sanic
 from sanic.response import text
 import utils
 
-app = Sanic(__name__)
+app = Sanic("cdyccTest")
 
 
 @app.route("/")
