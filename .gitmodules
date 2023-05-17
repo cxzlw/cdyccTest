@@ -1,0 +1,3 @@
+[submodule "zhihuDecrypt"]
+	path = zhihuDecrypt
+	url = https://github.com/cxzlw/zhihuDecrypt

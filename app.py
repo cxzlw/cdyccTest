@@ -1,7 +1,7 @@
 import sanic
 from sanic import Sanic
 from sanic.response import text
-import utils
+import zhihuDecrypt as zhihu
 
 app = Sanic("cdyccTest")
 
@@ -10,8 +10,8 @@ app = Sanic("cdyccTest")
 async def index(request: sanic.Request):
     if "id" not in request.args:
         return text("You have not passed any arguments here. Usage: url/id=xxxxx")
-    c = utils.get_cdycc(request.args.get("id"))
-    return text(utils.decrypt(c, utils.detect_encrypt_method(c)))
+    c = zhihu.get_cdycc(request.args.get("id"))
+    return text(zhihu.decrypt(c, zhihu.detect_encrypt_method(c)))
 
 
 if __name__ == '__main__':
